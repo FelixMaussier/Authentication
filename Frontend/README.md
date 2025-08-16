@@ -1,3 +1,3 @@
 # Landing Page
 
-![Landing page](Assets/LandingPage.gif)
+![Landing page](../Assets//LandingPage.gif)
