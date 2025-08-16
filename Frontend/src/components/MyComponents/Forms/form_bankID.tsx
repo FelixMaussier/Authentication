@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image"; // Glöm inte att importera Image-komponenten
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -14,7 +14,7 @@ export default function FormBankID({
   qrCodeImage: string | null;
 }) {
   return (
-    <Card>
+    <Card className="bg-gray-900/50 backdrop-blur border-gray-800 shadow-xl">
       <CardHeader>
         <CardTitle>Skanna QR-kod</CardTitle>
       </CardHeader>
