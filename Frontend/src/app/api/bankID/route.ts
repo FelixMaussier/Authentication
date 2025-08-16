@@ -54,6 +54,7 @@ export async function POST(request: Request) {
       qrStartToken: data.qrStartToken,
       qrStartSecret: data.qrStartSecret,
     });
+    
   } catch (error) {
     console.error("Error in BankID API route:", error);
 

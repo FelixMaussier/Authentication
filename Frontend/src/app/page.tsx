@@ -16,6 +16,7 @@ import { Github, Mail, Chrome, Rocket } from "lucide-react";
 import SplitText from "@/components/reactbits/SplitText";
 import ShinyText from "@/components/reactbits/ShinyText";
 import Iridescence from "@/components/reactbits/Iridescence";
+import FormBankID from "@/components/MyComponents/form_bankID";
 
 export default function SpaceLanding() {
   const [loading, setLoading] = useState(false);
@@ -216,12 +217,13 @@ export default function SpaceLanding() {
                 </div>
               </CardContent>
             </Card>
-            <Image
+            {/* <Image
               src={qrCodeImage}
               alt="BankID QR-kod"
               width={300}
               height={300}
-            />
+            /> */}
+            {qrCodeImage && <FormBankID qrCodeImage={qrCodeImage} />}
           </div>
         </div>
       </div>
