@@ -40,4 +40,6 @@ const authOption: NextAuthOptions = {
 }
 
 const handler = NextAuth(authOption)
+
+export const { auth, signIn, signOut } = NextAuth(authOption)
 export { handler as GET, handler as POST }

@@ -1,8 +1,6 @@
 import React from "react";
-import { Card, CardHeader, CardContent, CardTitle } from "../../ui/card";
-import Iridescence from "@/components/reactbits/Iridescence";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 
 export default function SignUpForm({

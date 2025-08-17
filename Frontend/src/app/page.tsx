@@ -1,35 +1,9 @@
 "use client";
 import "tailwindcss";
-import { useState, useEffect } from "react";
 import Iridescence from "@/components/reactbits/Iridescence";
-import BankIDForm from "@/components/Forms/BankIDForm";
-import SignUpForm from "@/components/Forms/SignUpForm";
-import LandingForm from "@/components/Forms/LandingForm";
-import OAuthForm from "@/components/Forms/OAuthForm";
+import InteractiveFormWrapper from "@/components/Forms/InteractiveFormWrapper";
 
 export default function SpaceLanding() {
-  const [activeForm, setActiveForm] = useState("landing");
-
-  const handleFormSwitch = (form: string) => {
-    setActiveForm(form);
-  };
-
-  const renderCurrentForm = () => {
-    switch (activeForm) {
-      case "landing":
-        return <LandingForm onSwitch={handleFormSwitch} />;
-      case "signUp":
-        return <SignUpForm onSwitch={handleFormSwitch} />;
-      case "bankID":
-        console.log("bankID");
-        return <BankIDForm onSwitch={handleFormSwitch} />;
-      case "google":
-        return <OAuthForm />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <>
       <div className="min-h-screen relative overflow-hidden">
@@ -41,7 +15,7 @@ export default function SpaceLanding() {
             speed={1.0}
           />
         </div>
-        {renderCurrentForm()}
+        <InteractiveFormWrapper />
       </div>
     </>
   );
