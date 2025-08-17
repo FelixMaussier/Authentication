@@ -1,4 +1,4 @@
-import { generateQrData } from "@/lib/bankid-qr-data"; 
+import { generateQrData } from "@/lib/bankID/bankid-qr-data"; 
 import { NextResponse } from "next/server";
 import QRCode from 'qrcode';
 
