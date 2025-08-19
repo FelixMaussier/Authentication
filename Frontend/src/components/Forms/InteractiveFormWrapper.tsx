@@ -4,7 +4,6 @@ import { useState } from "react";
 import BankIDForm from "./BankIDForm";
 import SignUpForm from "./SignUpForm";
 import LandingForm from "./LandingForm";
-import OAuthForm from "./OAuthForm";
 
 export default function InteractiveFormWrapper() {
   const [activeForm, setActiveForm] = useState("landing");
@@ -22,7 +21,7 @@ export default function InteractiveFormWrapper() {
         console.log("bankID");
         return <BankIDForm onSwitch={handleFormSwitch} />;
       case "google":
-        return <OAuthForm />;
+        return;
       default:
         return null;
     }

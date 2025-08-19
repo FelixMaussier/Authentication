@@ -8,6 +8,7 @@ import { Chrome } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SplitText from "@/components/reactbits/SplitText";
 import { Rocket } from "lucide-react";
+import { signIn } from "next-auth/react";
 
 export default function LandingForm({
   onSwitch,
@@ -55,7 +56,7 @@ export default function LandingForm({
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <Button
-                  onClick={() => onSwitch("google")}
+                  onClick={() => signIn("google", { callbackUrl: "/profile" })}
                   variant="outline"
                   className="w-full bg-gray-800/50 border-gray-700 text-gray-200 hover:bg-blue-600 hover:border-blue-500 hover:text-white transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/20"
                 >

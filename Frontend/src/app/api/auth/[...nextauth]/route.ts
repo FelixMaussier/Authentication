@@ -3,10 +3,11 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import { prisma } from "@/lib/prisma";
 
+
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID!
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET!
 
-const authOption: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
   },
@@ -36,10 +37,20 @@ const authOption: NextAuthOptions = {
       })
       return true
     },
+    async redirect({ url, baseUrl }) {
+      try {
+        const target = new URL(url);
+        if (target.origin === baseUrl) return url;
+      } catch {
+        if (url.startsWith("/")) return `${baseUrl}${url}`;
+      }
+      return `${baseUrl}/profile`;
+    },
   },
 }
 
-const handler = NextAuth(authOption)
+const handler = NextAuth(authOptions);
 
-export const { auth, signIn, signOut } = NextAuth(authOption)
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };
+
+export const auth = handler
